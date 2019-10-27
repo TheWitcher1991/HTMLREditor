@@ -1,0 +1,133 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+form {
+	max-width: 1000px;
+	margin: 20px auto;
+	padding: 60px;
+	background: rgb(48, 57, 66);
+	color: #fff;
+}
+
+#editor {
+	border: 1px solid #414d58;
+	background: rgb(28, 38, 47);
+	border-radius: 6px;
+	width: 100%;
+	overflow: hidden;
+}
+
+#editor-content {
+	width: 100%;
+	border: none;
+	border-radius: 0 0 6px 6px;
+	outline: none;
+	margin: 0;
+	padding: 15px;
+	font-size: 14px;
+	color: #fff;
+	background: rgb(28, 38, 47);
+	resize: none;
+	overflow-y: auto;
+	height: 300px;
+}
+
+.tools-button {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #414d58;
+	background: rgb(28, 38, 47);
+	color: #fff;
+}
+
+.tools-button > div > ul {
+	display: flex;
+	align-content: center;
+	margin: 0;
+	padding: 0 4px;
+	list-style: none;
+	border-right: 1px solid #414d58;
+}
+
+.tools-button #tools-block-4 > ul {
+	border-right: none;
+}
+
+.tools-button > div > ul > li {
+	position: relative;
+}
+
+.tools-button > div > ul > li > span:first-of-type {
+	width: 36px;
+	height: 36px;
+	display: block;
+	text-align: center;
+	line-height: 36px;
+	cursor: pointer;
+	transition: all 0.2s linear;
+}
+
+.tools-button > div > ul > li:hover {
+	background: rgb(42, 55, 66);
+	color: #f3f3f3;
+}
+
+.tools-button > div > ul > li > span > i {
+	color: #fff;
+	font-size: 15px;
+}
+
+.tools-button > div > ul > li > span > i.fa-caret-down {
+	font-size: 13px;
+}
+
+.tools-button #tools-ul-popup {
+	position: absolute;
+	background: #0083ec;
+	list-style: none;
+	z-index: 100;
+	white-space: nowrap;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+.tools-button #tools-ul-popup > li {
+	cursor: pointer;
+}
+
+.tools-button #tools-ul-popup > li > span {
+	font-size: 15px;
+	display: block;
+	line-height: 220%;
+	padding: 0 24px;
+}
+
+.tools-button #tools-ul-popup > li > span > i {
+	margin: 0 5px 0 0;
+}
+
+.tools-button #tools-ul-popup > li:hover {
+	background: #008eff;
+}
+
+.tooltip-tools {
+	position: absolute;
+	font-weight: normal;
+	font-size: 13px;
+	width: auto;
+	background: #008eff;
+	white-space: nowrap;
+	height: auto;
+	display: none;
+	text-align: center;
+	border-radius: 3px;
+	padding: 6px 9px;
+	line-height: normal;
+}
+
+.tools-button > div > ul > li:hover #tools-ul-popup {
+	display: block;
+}
