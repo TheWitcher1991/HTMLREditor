@@ -1,3 +1,5 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * @module engine/view/tools
  */
@@ -43,9 +45,13 @@ export default class Tools {
 	 */
 	static createButton() {
 		let tools = document.querySelector('.tools-button');
+
 		tools.innerHTML = Tools.blockFirst() + Tools.blockSecond() + Tools.blockThird() + Tools.blockFourth();
-		for (let index = 0; index < bbCodeSearch.length; index++) {
-			Tools.addBBCode(bbCodeReplace[index], bbCodeSearch[index]);
+
+		for (let index in bbCodeSearch) {
+			if (bbCodeSearch.hasOwnProperty(index)) {
+				Tools.addBBCode(bbCodeReplace[index], bbCodeSearch[index]);
+			}
 		}
 	}
 
@@ -129,14 +135,15 @@ export default class Tools {
 						</span>
 						<span class="tooltip-tools">Размер шрифта</span>
 						<ul id="tools-ul-popup" class="pop-size">
-							<li><span title="9" id="size-9">9</span></li>
-							<li><span title="10" id="size-10">10</span></li>
-							<li><span title="12" id="size-12">12</span></li>
-							<li><span title="14" id="size-14">14</span></li>
-							<li><span title="16" id="size-16">16</span></li>
-							<li><span title="18" id="size-18">18</span></li>
-							<li><span title="22" id="size-22">22</span></li>
-							<li><span title="26" id="size-26">26</span></li>
+							<li><span style="font-size: 9px" title="9" id="size-9">9</span></li>
+							<li><span style="font-size: 10px" title="10" id="size-10">10</span></li>
+							<li><span style="font-size: 12px" title="12" id="size-12">12</span></li>
+							<li><span style="font-size: 14px" title="14" id="size-14">14</span></li>
+							<li><span style="font-size: 16px" title="16" id="size-16">16</span></li>
+							<li><span style="font-size: 18px" title="18" id="size-18">18</span></li>
+							<li><span style="font-size: 22px" title="22" id="size-22">22</span></li>
+							<li><span style="font-size: 24px" title="24" id="size-24">24</span></li>
+							<li><span style="font-size: 26px" title="26" id="size-26">26</span></li>
 						</ul>
 					</li>
 				</ul>
@@ -161,7 +168,7 @@ export default class Tools {
 						<span class="tooltip-tools">Спойлер</span>
 					</li>
 					<li id="li-code">
-						<span id="code"><i class="fa fa-code"  aria-hidden="true"></i></span>
+						<span id="code"><i class="fa fa-code" aria-hidden="true"></i></span>
 						<span class="tooltip-tools">Вставить код</span>
 					</li>
 					<li id="li-ellipsis">
@@ -174,6 +181,8 @@ export default class Tools {
 							<li><span id="image"><i class="fa fa-picture-o" aria-hidden="true"></i> Изображение</span></li>
 							<li><span id="media"><i class="fa fa-video-camera" aria-hidden="true"></i> Медиа</span></li>
 							<li><span id="quote"><i class="fa fa-quote-right" aria-hidden="true"></i> Цитата</span></li>
+							<li><span id="spoiler-head"><i class="fa fa-flag" aria-hidden="true"></i> Спойлер с заголовком</span></li>
+							<li><span id="user-add"><i class="fa fa-user" aria-hidden="true"></i> Пользователь по ID</span></li>
 						</ul>
 					</li>
 				</ul>
@@ -214,7 +223,7 @@ export default class Tools {
 						</ul>
 					</li>
 					<li id="li-table">
-						<span id="span"><i class="fa fa-table" aria-hidden="true"></i></span>
+						<span id="table-bb"><i class="fa fa-table" aria-hidden="true"></i></span>
 					</li>
 				</ul>
 			</div>

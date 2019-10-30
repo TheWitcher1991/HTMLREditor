@@ -1,3 +1,5 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * @module engine/view/element
  */
@@ -5,11 +7,11 @@
 'use strict';
 
 import Other from '../utils/other.js';
-import Content from "./content.js";
-import Tools from "./tools.js";
+import Content from './content.js';
+import Tools from './tools.js';
 
-import defaultStyle from "../theme/default.js";
-import logger from '../core/logger.js'
+import defaultStyle from '../theme/default.js';
+import logger from '../core/logger.js';
 import mix from '../utils/mix.js';
 
 /**

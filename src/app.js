@@ -1,3 +1,5 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * HTMLREditor is a modern rich text editor built for compatibility and extensibility
  *
@@ -7,8 +9,6 @@
  * @copyright © 2019
  * @see https://github.com/TheWitcher1991/HTMLREditor
  */
-
-import HTMLREditor from "./core/HTMLREditor.js";
 
 (function(global, factory) {
 
@@ -28,14 +28,13 @@ import HTMLREditor from "./core/HTMLREditor.js";
 		factory(global);
 	}
 
-})(typeof window !== 'undefined' ? window : this, function (window) {
+})(typeof window !== 'undefined' ? window : this, async function (window) {
 
-	const editor = new HTMLREditor();
-
-	try {
-
-		window.HTMLREditor = editor;
-
-	} catch (e) {}
+	import('./core/HTMLREditor.js')
+		.then((module) => {
+			window.HTMLREditor = module;
+		})
+		.catch(_err => console.log(_err))
+		.finally(console.log('Editor load'));
 
 });

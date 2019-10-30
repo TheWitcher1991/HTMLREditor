@@ -1,6 +1,9 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * @module engine/core/HTMLREditor
  */
+
 
 'use strict';
 
@@ -136,5 +139,3 @@ export default class HTMLREditor {
 	}
 
 }
-
-

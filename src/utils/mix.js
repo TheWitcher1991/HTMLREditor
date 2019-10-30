@@ -1,3 +1,5 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * @module engine/utils/mix
  */

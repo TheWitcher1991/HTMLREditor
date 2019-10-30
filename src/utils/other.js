@@ -1,22 +1,12 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * @module engine/utils/other
  */
 
 'use strict';
 
-import logger from '../core/logger.js';
-import mix from "./mix.js";
-
-/**
- *
- * @type {{}}
- */
-const debug = logger('HTMLREditor:other');
-
-/**
- * @class Other
- */
-export default class Other {
+export default class {
 
 	/**
 	 *
@@ -295,6 +285,19 @@ export default class Other {
 		return elements;
 	}
 
-};
+	/**
+	 *
+	 * @param {Array|Object} iter
+	 * @returns {IterableIterator<*>}
+	 */
+	static *generator(iter = []) {
+		try {
+			for (let index in iter) {
+				if (iter.hasOwnProperty(index)) {
+					yield iter[index];
+				}
+			}
+		} catch (_err) {}
+	}
 
-mix(Other, mix);
+}

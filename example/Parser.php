@@ -6,7 +6,7 @@ namespace Engine\core;
  * Interface LoggerParser
  * интерфейс для класса Parser
  *
- * @file /test/Parser.php
+ * @file /example/Parser.php
  * @package Engine\core
  */
 interface LoggerParser {

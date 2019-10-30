@@ -1,3 +1,5 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  *	@module engine/view/content
  */
@@ -6,7 +8,7 @@
 
 import Other from '../utils/other.js';
 
-import logger from '../core/logger.js'
+import logger from '../core/logger.js';
 import mix from '../utils/mix.js';
 
 /**

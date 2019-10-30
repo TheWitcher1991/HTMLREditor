@@ -1,3 +1,5 @@
+/* eslint-env node, mocha, es6 */
+
 /**
  * @module engine/utils/bbCode
  */
@@ -15,7 +17,9 @@ export let bbCodeSearch = [
 	'[S]$1[/S]',
 
 	'[SPOILER]$1[/SPOILER]',
-	'[CODE]$1[/CODE]',
+	'[SPOILER=$1]$2[/SPOILER]',
+
+	'[CODE=$1]$2[/CODE]',
 
 	'[H1]$1[/H1]',
 	'[H2]$1[/H2]',
@@ -28,6 +32,7 @@ export let bbCodeSearch = [
 	'[SIZE=16]$1[/SIZE]',
 	'[SIZE=18]$1[/SIZE]',
 	'[SIZE=22]$1[/SIZE]',
+	'[SIZE=24]$1[/SIZE]',
 	'[SIZE=26]$1[/SIZE]',
 
 	'[IMG]$1[/IMG]',
@@ -49,8 +54,12 @@ export let bbCodeSearch = [
 	'[RIGHT]$1[/RIGHT]',
 	'[JUSTIFY]$1[/JUSTIFY]',
 
-	'[LIST]$[/LIST]',
-	'[LIST=1]$[/LIST=1]'
+	'[LIST]\n  [*]$1\n[/LIST]',
+	'[LIST=1]\n  [*]$1\n[/LIST]',
+
+	'[TABLE]\n  [TR]\n    [TH]$1[/TH]\n  [/TR]\n  [TR]\n    [TD]$2[/TD]\n  [/TR]\n[/TABLE]',
+
+	'[USER=$1]$2[/USER]'
 ];
 
 /**
@@ -64,6 +73,8 @@ export let bbCodeReplace = [
 	'#strikethrough',
 
 	'#spoiler',
+	'#spoiler-head',
+
 	'#code',
 
 	'#heading-1',
@@ -77,6 +88,7 @@ export let bbCodeReplace = [
 	'#size-16',
 	'#size-18',
 	'#size-22',
+	'#size-24',
 	'#size-26',
 
 	'#image',
@@ -99,5 +111,9 @@ export let bbCodeReplace = [
 	'#justify',
 
 	'#listm',
-	'#listn'
+	'#listn',
+
+	'#table-bb',
+
+	'#user-add'
 ];
