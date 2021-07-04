@@ -1,0 +1,46 @@
+{
+	"name": "htmlreditor",
+	"description": "htmlreditor is a modern rich text editor built for compatibility and extensibility",
+	"version": "2.1.0",
+	"main": "./src/app.js",
+	"bin": "./build",
+	"author": "github: TheWitcher1991 <alikzoy@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TheWitcher1991/HTMLREditor.git"
+	},
+	"license": "MIT",
+	"scripts": {
+		"test": "mocha",
+		"build": "webpack --mode production",
+		"watch": "webpack --mode production -w",
+		"server": "php -S 127.0.0.1:3000"
+	},
+	"private": false,
+	"devDependencies": {
+		"@babel/cli": "^7.6.4",
+		"@babel/core": "^7.6.4",
+		"@babel/plugin-transform-for-of": "^7.4.4",
+		"@babel/preset-env": "^7.6.3",
+		"@babel/runtime": "^7.6.3",
+		"babel-loader": "^8.0.6",
+		"babel-polyfill": "^6.26.0",
+		"eslint": "^6.5.1",
+		"mocha": "^6.2.2",
+		"mysql": "^2.17.1",
+		"requirejs": "^2.3.6",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.9"
+	},
+	"eslintIgnore": [
+		"build/**",
+		"node_modules/**",
+		"coverage/**",
+		"packages/**"
+	],
+	"engines": {
+		"node": ">= 14.x",
+		"npm": ">= 7.x",
+		"yarn": ">= 1.x"
+	}
+}
