@@ -9,7 +9,7 @@
 		"type": "git",
 		"url": "git+https://github.com/TheWitcher1991/HTMLREditor.git"
 	},
-	"license": "MIT",
+	"license": "GNU GPL",
 	"scripts": {
 		"test": "mocha",
 		"build": "webpack --mode production",
